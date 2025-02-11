@@ -1,0 +1,8 @@
+{
+    "liveServer.settings.https": {
+      "enable": true,
+      "cert": "C:\\Users\\dbava\\ar-mod\\arwebpage\\certificates\\localhost.pem",
+      "key": "C:\\Users\\dbava\\ar-mod\\arwebpage\\certificates\\localhost.key",
+      "passphrase": "localhost"
+    }
+  }

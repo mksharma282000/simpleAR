@@ -1,0 +1,11 @@
+Model Information:
+* title:	Car.glb
+* source:	https://sketchfab.com/3d-models/carglb-838e060c52fc487bb8708b1dd8bc3a90
+* author:	abhijeetkushwah114 (https://sketchfab.com/abhijeetkushwah114)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Car.glb" (https://sketchfab.com/3d-models/carglb-838e060c52fc487bb8708b1dd8bc3a90) by abhijeetkushwah114 (https://sketchfab.com/abhijeetkushwah114) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

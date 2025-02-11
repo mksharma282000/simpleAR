@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- include A-Frame obviously -->
+<script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+<!-- include ar.js for A-Frame -->
+<!-- <script src="https://jeromeetienne.github.io/AR.js/aframe/build/aframe-ar.js"></script> -->
+<script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
+<script src="https://raw.githack.com/donmccurdy/aframe-extras/master/dist/aframe-extras.loaders.min.js"></script>  
+<script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.7/handlebars.min.js"></script>
+<script src="https://raw.githack.com/AR-js-org/studio-backend/master/src/modules/marker/tools/gesture-detector.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.1.2/howler.core.min.js"></script>
+<script src="https://raw.githack.com/AR-js-org/studio-backend/master/src/modules/marker/tools/gesture-handler.js"></script>
+<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" href="https://aframe.io/releases/0.6.0/aframe.min.css">
+    <link rel="stylesheet" href="./style.css">
+    <title>Document</title>
+</head>
+
+<body style='margin : 0px; overflow: hidden;'>
+<div class="loadingScreen">loooding.....</div>
+<a-scene 
+  vr-mode-ui="enabled: false;"
+  loading-screen="enabled: true;"
+  renderer="logarithmicDepthBuffer: true;"
+  arjs="trackingMethod: best; sourceType: webcam; debugUIEnabled: false;"
+  id="scene"
+  embedded
+  gesture-detector
+  shadow="type: pcfsoft">
+
+    
+  
+    <a-assets>
+        <a-asset-item
+            id="animated-asset1"
+            src="./Flamingo.glb">
+        </a-asset-item>
+        <a-asset-item
+            id="animated-asset2"
+            src="./Labrador.glb">
+        </a-asset-item>
+    </a-assets>
+    <!-- <audio id="audio1"  controls>
+        <source src="./flamingo.mp3" type="audio/mpeg">
+        Your browser does not support the audio format.
+    </audio>
+    <audio id="audio2"  controls>
+        <source src="./dog.mp3" type="audio/mpeg">
+        Your browser does not support the audio format.
+    </audio> -->
+    <!-- create your content here. just a box for now -->
+    
+    <!-- define a camera which will move according to the marker position -->
+     <a-marker 
+        id="marker1" 
+        preset='kanji'
+        raycaster="objects: .clickable1"
+        emitevents="true"
+        cursor="fuse: false; rayOrigin: mouse;"
+        >
+        <!-- <a-box id="model" position='0 0.5 0' material='opacity: 0.5;'></a-box> -->
+        <a-entity 
+            id="model1"
+            gltf-model="#animated-asset1"
+            scale="0.01 0.01 0.01" 
+            position="-0.5 -0.5 -0.5"
+            rotation="0 90 0"
+            visible="false"
+            class="clickable1"
+            gesture-handler
+        ></a-entity>
+    </a-marker> 
+
+    <a-marker 
+    id="marker2" 
+    preset='hiro'
+    raycaster="objects: #model2"
+    emitevents="true"
+    cursor="fuse: false; rayOrigin: mouse;"
+ 
+    >
+        <!-- <a-box id="model" position='0 0.5 0' material='opacity: 0.5;'></a-box> -->
+        <a-entity 
+            id="model2"
+            gltf-model="#animated-asset2"
+            scale="0.3 0.3 0.3" 
+            position="-0.15 -0.5 -0.1"
+            rotation="0 90 0"
+            visible="false"
+            gesture-handler
+        ></a-entity>
+    </a-marker> 
+    <!-- <a-entity camera>
+        <a-cursor fuse="false" visible="false"></a-cursor>
+    </a-entity> --> 
+    <a-entity camera >
+        <!-- Add a crosshair to the center of the screen -->
+            <a-entity 
+            id="focus"
+                cursor="fuse: true; rayOrigin:mouse;" 
+                position="0 0 -1" 
+                geometry="primitive: ring; radiusInner: 0.02; radiusOuter: 0.04" 
+                material="color:#ffff00 ; shader: flat; opacity:100;">
+            </a-entity>
+        </a-entity>
+  </a-scene>
+
+  <!-- include the main.js file for AR.js and A-Frame -->
+  <script type="text/javascript" src="./main.js"></script>
+
+</body>
+
+</html>
